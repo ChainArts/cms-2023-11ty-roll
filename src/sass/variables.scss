@@ -1,0 +1,54 @@
+// MAX-WIDTH CONTAINER SIZE
+$max-width: 1920;
+
+
+// BREAKPOINTS
+$mobile: 900;
+$workshops-full-width: 1200;
+$desktop: $mobile + 1;
+
+
+// COLORS
+$bggray: hsl(207, 8%, 22%);
+$bggray-light: hsl(0, 0%, 21%);
+$bggray-lighter: hsl(0, 0%, 84%);
+$bgwhite: hsl(30, 8%, 95%);
+$bglight-orange: hsl(23, 100%, 97%);
+$bggray-ultralight: hsl(0, 0%, 97%);
+
+$primary: hsl(26, 62%, 57%);
+$secondary: hsl(26, 100%, 72%);
+$border-button: hsl(26, 86%, 69%);
+$heading-workshops: hsl(26, 100%, 72%);
+
+
+
+// FONTS
+$font-size-mobile: 16;
+$font-size-mobile-larger: 22;
+$font-size-mobile-large: 28;
+
+$font-size: 22;
+$font-size-larger: 38;
+$font-size-large: 68;
+
+$font-size-quote: 42;
+
+
+
+// GAPS
+
+$pad-slim: 36;
+$pad-vert: 48;
+$section-pad: 128;
+$section-pad-mobile: calc($section-pad / 2);
+$pad-mobile: 16;
+
+$line-height-paragraph: 36;
+$line-height-paragraph-mobile: 29;
+$line-height-workshops: 32;
+$line-height-quote: 51.2;
+
+// Animation
+$ease: cubic-bezier(.14,.8,.4,1);
+

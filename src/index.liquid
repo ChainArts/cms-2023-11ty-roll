@@ -1,0 +1,139 @@
+---
+layout: primary
+---
+    <main>
+        <section id='workshops'>
+            <div class="heading-container">
+                <p class='upperheading'>Find your entrance level & book a workshop with Marcus</p>
+                <h2>If you never start, you will never know.</h2>
+            </div>
+            <div class="card-container">
+                <div class="ws-card">
+                    <span class="u-align-top">3</span>
+                    <div class="ws-card-content card-type-1">
+                        <div class="ws-icon-container">
+                            <div class="ws-icon">
+                                <img src='./images/stretch.svg'>
+                            </div>
+                        </div>
+                        <div class="ws-description">
+                            <h3>As pro as you can get</h3>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                            <a class='button' href='#'>book workshop</a>
+                        </div>
+                        <div class="quote-container layout-1">
+                            <blockquote>
+                                <p>Respect your talent!</p>
+                            </blockquote>
+                            <img src='./images/quotes.svg'>
+                        </div>
+                    </div>
+                </div>
+                <div class="ws-card">
+                    <span class="u-align-center">2</span>
+                    <div class="ws-card-content card-type-2">
+                        <div class="ws-icon-container">
+                            <div class="ws-icon">
+                                <img src='./images/up.svg'>
+                            </div>
+                        </div>
+                        <div class="ws-description">
+                            <h3>Aspire More</h3>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                            <a class='button' href='#'>book workshop</a>
+                        </div>
+                        <div class="quote-container layout-2">
+                            <blockquote>
+                                <p>Thank yourself for levelling up now!</p>
+                            </blockquote>
+                            <img src='./images/quotes.svg'>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ws-card">
+                    <span class="u-align-bottom">1</span>
+                    <div class="ws-card-content">
+                        <div class="ws-icon-container">
+                            <div class="ws-icon">
+                                <img src='./images/rise.svg'>
+                            </div>
+                        </div>
+                        <div class="ws-description">
+                            <h3>Learn the Basics profoundly</h3>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                            <a class='button' href='#'>book workshop</a>
+                        </div>
+                        <div class="quote-container layout-2">
+                            <blockquote>
+                                <p>Fall in love with dancing!</p>
+                            </blockquote>
+                            <img src='./images/quotes.svg'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id='about-me'>
+            <div class="about-image">
+                <img
+                    loading="lazy"
+                    sizes="(max-width: 1800px) 100vw, 1800px"
+                    srcset="
+                        ./images/headshot_w_200.jpg 200w,
+                        ./images/headshot_w_877.jpg 877w,
+                        ./images/headshot_w_1263.jpg 1263w,
+                        ./images/headshot_w_1588.jpg 1588w,
+                        ./images/headshot_w_1800.jpg 1800w"
+                    src="headshot_w_1800.jpg"
+                    alt="Sideprofile image of Marcus G. Miller"
+                    >
+            </div>
+            <div class="about-content">
+                <p class='upperheading'>Why I Teach</p>
+                <h2>Hi, I'm Marcus!</h2>
+                <div class="about-text">
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                        nonumy eirmod tempor invidunt ut labore et dolore magna
+                        aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                        duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                        sanctus est Lorem ipsum dolor sit amet.</p>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                        nonumy eirmod tempor invidunt ut labore et dolore magna
+                        aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                        duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                        sanctus est Lorem ipsum dolor sit amet.<br>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                        nonumy eirmod tempor invidunt ut labore et dolore magna.</p>
+                </div>
+                <a class='button' href='#'>learn more</a>
+            </div>
+        </section>
+
+        <section id='news'>
+            <p class='upperheading'>Making waves since 2002</p>
+            <h2>In the News</h2>
+            <div class="news-carousell">
+
+                {% assign news = collections.news | reverse %}
+                {% for item in news limit:3 %}
+                    
+                <article>
+                    <h3>{{ item.data.title }}</h3>
+                        <img
+                            loading="lazy"
+                            sizes="(max-width: 1380px) 100vw, 1380px"
+                            {{ item.data.images }}
+                            alt="{{ item.data.alt }}">
+                    <p>{{ item.data.excerpt }}</p>
+                    <a class='button' href='{{ item.url }}'>read more</a>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+   

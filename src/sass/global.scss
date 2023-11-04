@@ -1,0 +1,82 @@
+*, *:after, *:before {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+a{
+    color: $secondary;
+}
+
+body {
+    font-family: 'Source Sans 3', sans-serif;
+    min-width: 100%;
+    font-size: rem($font-size);
+    background: $bgwhite;
+}
+
+@mixin button {
+    display: inline-block;
+    padding: .8em 1.5em;
+    border: 1px solid $border-button;
+    font-weight: 600;
+    font-size: rem($font-size);
+    text-transform: uppercase;
+    transition: color, background-color 0.4s $ease;
+    
+    &:hover{
+        background-color: $border-button;
+        color: white;
+    }
+
+    @include breakpoint(0, $mobile) {
+        font-size: rem($font-size-mobile);
+    }
+}
+
+.upperheading{
+    margin: 0 !important;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+h2{
+    margin-bottom: rem($pad-vert);
+    font-size: rem($font-size-large);
+    font-weight: 300;
+    color: $primary;
+}
+
+h3{
+    font-size: rem($font-size-larger);
+    font-weight: 300;
+    color: $primary;
+}
+
+p{
+    font-weight: 300;
+    color: $bggray-light;
+    line-height: rem($line-height-paragraph);
+}
+
+@include breakpoint(0, $mobile){
+    body{
+        font-size: rem($font-size-mobile);
+    }
+
+    h2{
+        font-size: rem($font-size-mobile-large);
+        margin-bottom: rem($pad-mobile);
+    }
+
+    h3{
+        font-size: rem($font-size-mobile-larger);
+    }
+
+    .upperheading{
+        font-size: rem($font-size-mobile);
+    }
+
+    p{
+        line-height: rem($line-height-paragraph-mobile);
+    }
+}

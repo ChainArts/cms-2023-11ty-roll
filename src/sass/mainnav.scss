@@ -1,0 +1,149 @@
+nav ul{
+    font-weight: 300;
+        li:first-child a {
+        color: white;
+        span{
+            font-weight: 600;
+        }
+    }
+}
+
+header {
+    margin-bottom: rem($section-pad);
+    height: 97vh;
+    padding: rem($pad-vert) 4rem rem($pad-vert) rem($pad-slim);
+    background-color: black;
+    background-image: url('./images/hero_img.png');
+    background-size: cover;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    
+}
+
+
+@include breakpoint(0, $mobile) {
+    .mobile-hidden{
+        @include hidden;
+    }
+
+    header{
+        display: flex;
+        height: 60vh;
+        flex-direction: column;
+        padding: rem($pad-mobile);
+        margin-bottom: rem($section-pad-mobile);
+        background-position: right;
+    }
+
+    .menu{
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        z-index: 100;
+        right: -100vw;
+        top: 0;
+        padding: 4rem 1rem 1rem 1rem;
+        width: 20rem;
+        height: 100vh;
+        background-color: $bggray;
+        overflow: hidden;
+        transition: all 0.4s $ease;
+        transform: translateX(0vw);
+        
+        & ul{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 2rem;
+
+            a{
+                transition: color 0.4s $ease;
+                font-size: rem($font-size);
+                color: white;
+                font-weight: 300;
+                &:active, &:hover{
+                    color: $secondary;
+                }
+            }
+        }
+    }
+
+    .menu-open{
+        transform: translateX(-100vw) !important;
+    }
+
+    .hero-items{
+        align-self: flex-end;
+        padding: 2rem;
+        padding-top: 14rem;
+        h1{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2rem;
+            font-size: rem($font-size-larger);
+            font-weight: 300;
+            color: $primary;
+            
+        }
+        & a.button{
+            @include button;
+            color: white;
+        }
+    }
+    
+}
+
+@include breakpoint($desktop) {
+    .desktop-hidden{
+        @include hidden;
+    }
+
+    nav ul{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        li{
+            &:not(:first-child) a{
+                font-weight: 600;
+                
+                &:after{
+                    content: '';
+                    display: block;
+                    margin-top: 5px;
+                    width: 100%;
+                    height: 2px;
+                    background-color: $secondary;
+                    transition: width 0.5s $ease;
+                }
+            }
+            &:first-child a {
+                color: white;
+                text-transform: initial;
+                span{
+                    font-weight: 600;
+                    text-transform: uppercase;
+                }
+            }
+            &:nth-child(2) {
+                margin-left: auto;
+            }
+        }
+    }
+    
+    .hero-items{
+        padding: 14rem 11rem 14rem 11rem;
+        h1{
+            font-size: rem($font-size-large);
+            font-weight: 300;
+            margin-bottom: 3rem;
+            color: $primary;
+        }
+        & a.button{
+            @include button;
+            color: white;
+        }
+    }
+}
+
+

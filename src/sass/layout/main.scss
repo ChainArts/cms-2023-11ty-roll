@@ -1,0 +1,67 @@
+main{
+    display: flex;
+    flex-direction: column;
+    gap: rem($section-pad);
+    margin-bottom: rem($section-pad);
+}
+
+section{
+    padding: 0 rem($pad-slim);
+}
+
+
+#about-me{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: rem($section-pad) rem($pad-slim);
+    background-color: $bglight-orange;
+
+    .about-image{
+        flex: 1;
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+   .about-content{
+    flex: 1;
+    padding: 2rem 0 2rem 0;    
+    & a{
+        @include button;
+        color: black;
+        padding: .6em 1em;
+        margin-top: 1rem;
+        }
+    p {
+        margin-bottom: 1rem;
+        max-width: 37rem;
+        width: 100%;
+        }
+    }
+}
+
+
+
+@include breakpoint(0, $mobile) {
+
+    main{
+        margin-bottom: rem($section-pad-mobile);
+        gap: rem($section-pad-mobile);
+    }
+
+    section{
+        padding: 0;
+    }
+
+    #about-me{
+        padding: rem($section-pad-mobile) 0;
+        flex-direction: column;
+
+        .about-content{
+            padding: 0 rem($pad-mobile);
+        }        
+    }
+}
